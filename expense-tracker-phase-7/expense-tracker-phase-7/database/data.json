@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": "da996869f1fb4f2e86dfd97b2f0a3bfb",
+      "name": "Priya"
+    },
+    {
+      "id": "081957c0a5ca49adbecacd3e47bb7adc",
+      "name": "sathish"
+    },
+    {
+      "id": "213c37fb75d24263834e22178be46a2d",
+      "name": "sastik"
+    },
+    {
+      "id": "b971def4c3884c5085e0828c73c43881",
+      "name": "lavanya"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "be986e5529634930a2fb27168b6cc30d",
+      "user_id": "b971def4c3884c5085e0828c73c43881",
+      "amount": 600.0,
+      "date": "2026-08-14",
+      "category": "food",
+      "description": "lunch",
+      "created_at": "2026-08-14T06:51:04Z",
+      "updated_at": "2026-08-14T06:52:56Z"
+    },
+    {
+      "id": "68525f9ad5a9467b802aa201846c69ca",
+      "user_id": "b971def4c3884c5085e0828c73c43881",
+      "amount": 100.0,
+      "date": "2026-08-14",
+      "category": "transport",
+      "description": "cab",
+      "created_at": "2026-08-14T06:55:40Z",
+      "updated_at": "2026-08-14T06:55:40Z"
+    }
+  ]
+}
