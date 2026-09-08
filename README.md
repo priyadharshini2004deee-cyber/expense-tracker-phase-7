@@ -1,87 +1,221 @@
-# Expense Tracker Web Application — Phase 7
+# Expense Tracker Web Application
 
-## Overview
-Controlled Phase 7 implementation for the Navia Markets Limited Executive Project Coordinator assessment.
+A simple and user-friendly web application for managing personal expenses, tracking spending, and viewing expense summaries through a dashboard.
 
-## Technology
-Python 3, Flask, HTML5, CSS, Vanilla JavaScript and JSON file persistence.
+## 📌 Project Overview
 
-## Core Features
-- User creation and duplicate handling
-- Active-user selection
-- Expense create/edit/delete
-- Amount/date/category/description validation
-- Ownership protection
-- Dashboard total, average and category breakdown
-- Zero-expense behaviour
-- Local persistence
-- Business-level validation messages
+The **Expense Tracker Web Application** is a full-stack web application developed using **Python Flask, HTML, CSS, and JavaScript**.
 
-## Scope Control
-**Optional/non-mandatory:** Payment Method, Dashboard Filters.
+The application allows users to create and manage users, add and update expenses, delete expenses, and view spending analytics through a simple dashboard.
 
-**Clarification-dependent/outside mandatory baseline:** Authentication.
+Expense data is stored locally using a JSON-based persistence layer.
 
-**Out of scope:** Multi-currency, export, forecasting, bank integration, OCR, notifications, recurring expenses, RBAC, complex audit trails, soft delete/undo and other unapproved features.
+## 🚀 Key Features
 
-## Structure
+* 👤 Create and manage users
+* 🔄 Select and switch between active users
+* ➕ Add new expenses
+* ✏️ Edit existing expenses
+* 🗑️ Delete expenses
+* 🔐 Prevent users from modifying another user's expenses
+* ✅ Input validation and error handling
+* 📊 Dashboard with:
+
+  * Total expenses
+  * Average expense
+  * Category-wise spending
+* 📭 Handles users with zero expenses
+* 💾 Local JSON-based data persistence
+* 📱 Responsive and simple user interface
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose                       |
+| ---------- | ----------------------------- |
+| Python     | Backend programming           |
+| Flask      | Web application framework     |
+| HTML5      | Frontend structure            |
+| CSS3       | Styling and responsive design |
+| JavaScript | Frontend functionality        |
+| JSON       | Local data persistence        |
+
+## 📂 Project Structure
+
 ```text
-expense-tracker-phase-7/
-├── backend/app.py
-├── frontend/templates/index.html
-├── frontend/static/app.js
-├── frontend/static/styles.css
-├── database/data.json
+Expense Tracker Web Application/
+│
+├── backend/
+│   └── app.py
+│
+├── frontend/
+│   ├── templates/
+│   │   └── index.html
+│   └── static/
+│       ├── app.js
+│       └── styles.css
+│
+├── database/
+│   └── data.json
+│
 ├── tests/
+│   ├── acceptance-validation.md
+│   ├── defect-log.md
+│   ├── edge-case-validation.md
+│   └── phase-7-test-execution.md
+│
 ├── screenshots/
+│
 ├── docs/
-├── README.md
+│
 ├── requirements.txt
-└── phase-7-implementation-report.md
+├── phase-7-implementation-report.md
+├── phase-7-implementation-report.pdf
+├── .gitignore
+└── README.md
 ```
 
-## Setup
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/priyadharshini2004deee-cyber/expense-tracker-phase-7.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd expense-tracker-phase-7
+```
+
+### 3. Create a virtual environment
+
 ```bash
 python -m venv .venv
-# Windows:
+```
+
+### 4. Activate the virtual environment
+
+**Windows:**
+
+```bash
 .venv\Scripts\activate
-# macOS/Linux:
-# source .venv/bin/activate
+```
+
+**macOS / Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+### 5. Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Run
+## ▶️ Run the Application
+
+Start the Flask application:
+
 ```bash
 python backend/app.py
 ```
-Open `http://127.0.0.1:5000`.
 
-## Usage
-Create a user, select the active user, create expenses, edit/delete them, switch users and review user-scoped dashboard calculations. Restart the application to observe local persistence.
+Then open the following URL in your browser:
 
-## Validation
-Blank/duplicate user names, missing active user, invalid/non-positive amounts, invalid dates, missing category and missing description are rejected. Failed edits validate before modifying the stored record.
+```text
+http://127.0.0.1:5000
+```
 
-## Dashboard
-Total = sum of valid active-user expenses.
+## 📊 Application Workflow
 
-Average = total divided by valid active-user expense count.
+```text
+Create / Select User
+        ↓
+Add Expense
+        ↓
+Validate Expense
+        ↓
+Save Expense
+        ↓
+View / Edit / Delete
+        ↓
+Dashboard Analytics
+        ↓
+Category-wise Spending
+```
 
-Category Breakdown = category totals from valid active-user expenses.
+## 🧪 Testing & Validation
 
-Zero valid expenses produce zero total, zero average and an empty-state message.
+The project includes documented test scenarios covering:
 
-## Persistence
-`database/data.json` stores users, expenses and ownership. Its classification as a confirmed requirement versus Phase 2 working assumption requires verification against the approved Phase 1–6 documents.
+* User creation
+* Duplicate user handling
+* Expense creation
+* Expense editing
+* Expense deletion
+* Input validation
+* User ownership protection
+* Dashboard calculations
+* Category-wise expense summaries
+* Zero-expense scenarios
+* Edge cases and validation scenarios
 
-## QA
-`tests/phase-7-test-execution.md` preserves TC-001–TC-065 and marks them Not Run. Acceptance and edge-case documents preserve AC-001–AC-016 and EC-001–EC-020.
+Detailed test documentation is available in the `tests/` directory.
 
-## Source-Control Note
-The complete Phase 1–6 source documents were not attached to the implementation build context. Exact BR/V/AC/EC/TC wording and mappings are therefore not guessed.
+> **Note:** Test documentation is included in the repository. Runtime test execution status should be verified before claiming all test cases as passed.
 
-## Demonstration
-Show user creation, active-user selection, validation messages, expense create/edit/delete, dashboard calculations, user-scoped records, zero-expense state and persistence after restart.
+## 📸 Screenshots
 
-## Verification Status
-The source code has been syntax-checked. Runtime execution and screenshot evidence are **Pending Evidence** in the current generation environment. Do not report tests as Passed until Phase 8 execution is actually performed.
+Application screenshots are available in the `screenshots/` directory.
+
+## 📚 Documentation
+
+Additional project documentation is available in:
+
+* `docs/`
+* `phase-7-implementation-report.md`
+* `phase-7-implementation-report.pdf`
+
+## 🔮 Future Enhancements
+
+Possible future improvements include:
+
+* User authentication and login
+* Database integration using SQLite/PostgreSQL
+* Expense filtering and search
+* Export expenses to CSV/Excel
+* Monthly and yearly spending reports
+* Data visualization using charts
+* Recurring expense management
+* Cloud deployment
+* REST API integration
+
+## 💡 What I Learned
+
+Through this project, I gained practical experience in:
+
+* Building a Flask-based web application
+* Connecting frontend and backend components
+* Working with REST-style API endpoints
+* Handling CRUD operations
+* Implementing input validation
+* Managing local data persistence
+* Designing dashboard-based analytics
+* Structuring a full-stack project
+* Using Git and GitHub for version control
+
+## 👩‍💻 Author
+
+**Priyadharshini**
+
+AI/ML Fresher | Python Developer | Data Analyst
+
+### GitHub
+
+`priyadharshini2004deee-cyber`
+
+---
+
+⭐ If you find this project useful, feel free to explore the repository and its documentation.
